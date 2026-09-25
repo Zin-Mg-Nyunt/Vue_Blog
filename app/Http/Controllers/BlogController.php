@@ -19,8 +19,24 @@ class BlogController extends Controller
         ]);
     }
 
-    public function edit(){
-        return inertia('Edit');
+    public function edit(Blog $blog){
+        return inertia('Edit',[
+            'blog'=>$blog
+        ]);
+    }
+
+    public function update(Blog $blog, Request $request){
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required'
+        ]);
+
+        $blog->update([
+            'title'=>$request->title,
+            'description'=>$request->description
+        ]);
+
+        return redirect()->route('blog.show',$blog->id);
     }
 
     public function destroy(Blog $blog){

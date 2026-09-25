@@ -10,6 +10,7 @@ class Blog extends Model
     /** @use HasFactory<\Database\Factories\BlogFactory> */
     use HasFactory;
     protected $with = ['user'];
+    protected $guarded = ['id'];
 
     public function user(){
         return $this->belongsTo(User::class);

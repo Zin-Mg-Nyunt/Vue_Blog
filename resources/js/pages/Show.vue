@@ -2,7 +2,7 @@
     <div>
         <h2>{{ blog.title }}</h2>
         <p>{{ blog.description }}</p>
-        <Link :href="route('blog.edit')">Edit</Link>
+        <Link :href="route('blog.edit', blog.id)">Edit</Link>
         <form @submit.prevent="deleteBlog(blog.id)">
             <button type="submit">Delete</button>
         </form>
