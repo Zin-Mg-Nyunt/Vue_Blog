@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Blog;
+use App\Models\Nrc;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,6 +22,9 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create()
             ->each(function($user){
                 Blog::factory(rand(1,4))->create([
+                    'user_id'=>$user->id
+                ]);
+                Nrc::factory()->create([
                     'user_id'=>$user->id
                 ]);
             });

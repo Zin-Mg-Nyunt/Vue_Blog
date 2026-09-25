@@ -1,6 +1,8 @@
 <template>
     <div>
         <h1>{{ user.name }}</h1>
+        <p>{{ user.nrc.nrc_number }}</p>
+        <p>{{ user.nrc.address }}</p>
         <div v-for="blog in user.blogs" :key="blog.id">
             <Link :href="route('blog.show', blog.id)">{{ blog.title }}</Link>
         </div>

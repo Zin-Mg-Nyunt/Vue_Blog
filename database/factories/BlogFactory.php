@@ -21,7 +21,7 @@ class BlogFactory extends Factory
         return [
             'title'=>fake()->sentence(),
             'description'=>fake()->paragraph(),
-            'user_id'=>User::factory()->create()
+            'user_id'=>User::factory()
         ];
     }
 }

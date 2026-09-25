@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function profile(User $user){
         return inertia('user/Profile',[
-            'user'=>$user->load('blogs')
+            'user'=>$user->load('blogs','nrc')
         ]);
     }
 }
