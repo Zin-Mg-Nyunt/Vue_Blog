@@ -18,4 +18,13 @@ class BlogController extends Controller
             'blog'=>$blog
         ]);
     }
+
+    public function edit(){
+        return inertia('Edit');
+    }
+
+    public function destroy(Blog $blog){
+        $blog->delete();
+        return redirect()->route('home');
+    }
 }
