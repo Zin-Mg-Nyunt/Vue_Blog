@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        Blog::factory(10)->create();
+        User::factory(5)->create()
+            ->each(function($user){
+                Blog::factory(rand(1,4))->create([
+                    'user_id'=>$user->id
+                ]);
+            });
     }
 }

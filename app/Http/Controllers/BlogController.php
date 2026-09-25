@@ -8,19 +8,19 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function index(){
-        return inertia('Home',[
+        return inertia('blog/Home',[
             'blogs'=>Blog::orderBy('id','desc')->get()
         ]);
     }
 
     public function show(Blog $blog){
-        return inertia('Show',[
+        return inertia('blog/Show',[
             'blog'=>$blog
         ]);
     }
 
     public function edit(Blog $blog){
-        return inertia('Edit',[
+        return inertia('blog/Edit',[
             'blog'=>$blog
         ]);
     }

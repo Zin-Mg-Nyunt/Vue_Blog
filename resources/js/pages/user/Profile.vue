@@ -1,10 +1,8 @@
 <template>
     <div>
-        <h1>Vue Blog</h1>
-        <div v-for="blog in blogs" :key="blog.id">
+        <h1>{{ user.name }}</h1>
+        <div v-for="blog in user.blogs" :key="blog.id">
             <Link :href="route('blog.show', blog.id)">{{ blog.title }}</Link>
-            -
-            <Link>{{ blog.user.name }}</Link>
         </div>
     </div>
 </template>
@@ -13,8 +11,8 @@
 import { Link } from "@inertiajs/vue3";
 
 const props = defineProps({
-    blogs: Array,
+    user: Object,
 });
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>
