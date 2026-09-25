@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>Vue Blog</h1>
+        <Link :href="route('blog.create')">Create Blog</Link>
         <div v-for="blog in blogs" :key="blog.id">
             <Link :href="route('blog.show', blog.id)">{{ blog.title }}</Link>
             -
